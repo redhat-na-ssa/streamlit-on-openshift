@@ -27,7 +27,7 @@ import base64
 # Initial page config
 
 st.set_page_config(
-     page_title="Brady's Soap Box",
+     page_title="Brady's Soap Box. A HUGE BOX OF SOAP!",
      layout="wide",
      initial_sidebar_state="expanded",
 )
