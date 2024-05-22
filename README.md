@@ -18,12 +18,14 @@ Deploying a Streamlit app on OpenShift
 APP_PORT=${APP_PORT:-"8080"}
 streamlit run --server.port ${APP_PORT} app.py
 ```
-4. Create a new OpenShift project or use an existing one
+4. Create a new OpenShift Project or use an existing one
 5. From the OpenShift Web Console ("Developer" view, not Administrator), select the project you want to deploy the app into
 6. Click the '+Add' option on the left-hand menu and select 'Import from Git'
-7. Provide your Git repository's 'clone' URL. After the URL is validated, click 'Create' (accept the default options for the form that appears)
-8. Wait for the build to complete and the app to be deployed
-9. Access the app by clicking on the route that is created for the app
+7. Provide your Git repository's 'clone' URL. 
+8. Click 'Show advanced Git options'. Make sure your update the 'Git reference' value to match the branch you want to pull from, which is usually `main` 
+9. After the URL is validated, click 'Create' (accept the default options for the form that appears)
+10. Wait for the build to complete and the app to be deployed
+11. Access the app by clicking on the Route that is created for the app
 
 ## Video Demo
 ![Streamlit on OpenShift](media/deploying_streamlit_with_s2i.mov)
@@ -38,8 +40,9 @@ streamlit run --server.port ${APP_PORT} app.py
 7. Click on the "Webhooks" link
 8. Click on the "Add webhook" button
 9. Paste the URL you copied from the OpenShift console into the "Payload URL" field
-10. Set the "Content type" to "application/json"
-11. Click on the "Add webhook" button
+10. Disable SSL Verification. `!IMPORTANT!` We are only doing this for the workshop. In a normal environment, you should always enable SSL verification.
+11. Set the "Content type" to "application/json"
+12. Click on the "Add webhook" button
 
 ## Links to resources used during this workshop
 - ![Streamlit](https://streamlit.io/)
